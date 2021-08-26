@@ -1,0 +1,89 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: example-food
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  port:
+    targetPort: 8090
+  to:
+    kind: Service
+    name: example-food
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: apiservice-path-creatorder
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  path: "/createOrder"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: apiservice
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: apiservice-path-status
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  path: "/status"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: apiservice
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: apiservice-path-restaurants
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  path: "/restaurants"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: apiservice
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: apiservice-path-user
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  path: "/user"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: apiservice
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: realtimedata-path-events
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  path: "/events"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: realtimedata
+---
+apiVersion: v1
+kind: Route
+metadata:
+  name: podconsumerdata-path-consumers
+spec:
+  host: example-food-koyfman-gmail-com-project.ddc-openshift-sat-f2c6cdc6801be85fd188b09d006f13e3-0000.upi.containers.appdomain.cloud
+  path: "/consumers"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: podconsumerdata
