@@ -22,6 +22,8 @@ export ACCOUNT_ID
 export CONTROLLER_ID
 export REGION
 
+subscription-manager refresh && subscription-manager repos --enable '*'
+
 #shutdown known blacklisted services for Satellite (these will break kube)
 set +e
 systemctl stop -f iptables.service
